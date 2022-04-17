@@ -1,0 +1,99 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId 'com.example.mvvm_note_app'
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    def lifecycle_version = "2.4.1"
+    def room_version = "2.4.2"
+
+//    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+
+    //design
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // concurrent
+    implementation "androidx.concurrent:concurrent-futures:1.1.0"
+    // Lifecycle components
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+    // Room components
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+//    //Retrofit and GSON
+//    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+//
+//    //Kotlin Coroutines
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+//
+//
+//    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+//
+//    //New Material Design
+//    implementation 'com.google.android.material:material:1.5.0'
+//
+//    //Kodein Dependency Injection
+//    implementation 'org.kodein.di:kodein-di-generic-jvm:6.2.1'
+//    implementation 'org.kodein.di:kodein-di-framework-android-x:6.2.1'
+//
+//    //Android Room
+//    implementation 'androidx.room:room-runtime:2.4.2'
+////    implementation 'androidx.room:room-*:2.4.2'
+//    implementation 'androidx.room:room-common:2.4.2'
+////    kapt 'androidx.room:room-compiler:2.4.2'
+//    annotationProcessor 'androidx.room:room-compiler:2.4.2'
+////    implementation 'androidx.room:room-compiler:2.4.2'
+//
+//    //Android Navigation Architecture
+//    implementation 'androidx.navigation:navigation-fragment:2.4.2'
+//    implementation 'androidx.navigation:navigation-ui:2.4.2'
+}
